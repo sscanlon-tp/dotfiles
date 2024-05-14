@@ -1,0 +1,22 @@
+[user]
+    name = Shane Scanlon
+    email = shane@touchpoint.io
+	signingkey = F983460B5802D04C
+[core]
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+    pager = delta
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[pull]
+    rebase = true
+[commit]
+	gpgsign = true
+[tag]
+    forceSignAnnotated = true
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    algorithm = histogram
