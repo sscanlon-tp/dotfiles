@@ -27,10 +27,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 	Plug 'SirVer/ultisnips' | Plug 'phux/vim-snippets'
-	Plug 'ncm2/ncm2'
-	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
-	Plug 'ncm2/ncm2-ultisnips'
 	Plug 'w0rp/ale'
 	Plug 'amiorin/vim-project'
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -60,19 +57,6 @@ call plug#end()
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-""""""""""""""""""""""""""""""""""""""""""
-" ncm2
-""""""""""""""""""""""""""""""""""""""""""
-augroup ncm2
-	au!
-	autocmd BufEnter * call ncm2#enable_for_buffer()
-	au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
-	au User Ncm2PopupClose set completeopt=menuone
-augroup END
-
-" parameter expansion for selected entry via Enter
-inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
 
 " cycle through completion entries with tab/shift+tab
 inoremap <expr> <TAB> pumvisible() ? "\<c-n>" : "\<TAB>"

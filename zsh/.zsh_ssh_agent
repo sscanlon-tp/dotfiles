@@ -11,9 +11,7 @@ function start_agent {
 }
 
 ## ssh-agent
-if [ -e "$SSH_AUTH_SOCK" ]; then
-  echo "Using ${SSH_AUTH_SOCK}"
-elif [ -f "${SSH_ENV}" ]; then
+if [ -f "${SSH_ENV}" ]; then
   echo "Using ${SSH_ENV}"
   source ${SSH_ENV} > /dev/null
   ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
