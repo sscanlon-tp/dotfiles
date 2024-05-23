@@ -26,29 +26,16 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'SirVer/ultisnips' | Plug 'phux/vim-snippets'
-	Plug 'roxma/vim-hug-neovim-rpc'
-	Plug 'w0rp/ale'
-	Plug 'amiorin/vim-project'
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-	Plug 'junegunn/fzf.vim'
-	Plug 'pbogut/fzf-mru.vim'
+	" Plug 'w0rp/ale'
 	" only show MRU files from within your cwd
 	let g:fzf_mru_relative = 1
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-unimpaired'
     " Extend to include base 64 encoding/decoding
     vnoremap [Y c<c-r>=system('base64 ', @")<cr><esc>
-    vnoremap ]Y c<c-r>=system('base64 --decode', @")<cr><esc>
-    Plug 'vim-scripts/IndexedSearch'
     Plug 'fholgado/minibufexpl.vim'
     Plug 'tpope/vim-fugitive'
-    "Plug 'vim-vdebug/vdebug'
     Plug 'vim-airline/vim-airline'
-    Plug 'fatih/vim-go' " Amazing combination of features.
-    Plug 'godoctor/godoctor.vim' " Some refactoring tools
-    Plug 'jodosha/vim-godebug' " Debugger integration via delve
-    Plug 'elixir-tools/elixir-tools.nvim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""
