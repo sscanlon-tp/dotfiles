@@ -186,3 +186,7 @@ Temporary Items
 
 ## Node Packages
 node_modules
+
+## test file
+shane_tests.php
+.envrc

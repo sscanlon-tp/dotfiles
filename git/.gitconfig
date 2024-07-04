@@ -20,3 +20,6 @@
     conflictstyle = zdiff3
 [diff]
     algorithm = histogram
+[includeIf "gitdir:~/dev/turtlestack/"]
+    ; this can't be sylinked, so is stored outside of stow
+    path = .gitconfig.turtlestack
