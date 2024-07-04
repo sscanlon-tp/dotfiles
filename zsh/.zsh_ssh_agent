@@ -6,18 +6,11 @@ function start_agent {
   chmod 600 ${SSH_ENV}
   source ${SSH_ENV} > /dev/null
   ssh-add;
-  ssh-add ~/.ssh/id_ed25519_tsgh;
+  ssh-add ~/.ssh/id_turtlestack
   echo succeeded
 }
 
 ## ssh-agent
-if [ -f "${SSH_ENV}" ]; then
-  echo "Using ${SSH_ENV}"
-  source ${SSH_ENV} > /dev/null
-  ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-    echo "${SSH_ENV} agent is no longer running"
-    start_agent;
-  }
-else
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
   start_agent;
 fi

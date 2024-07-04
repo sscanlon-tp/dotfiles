@@ -138,6 +138,7 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.asdf/asdf.sh"
 
+eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 # pnpm
