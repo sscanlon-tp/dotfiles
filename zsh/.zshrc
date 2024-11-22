@@ -89,6 +89,8 @@ bindkey -e '\e[3~' delete-char
 [ -f ~/.zsh_local_path ] && source ~/.zsh_local_path
 #store ssh
 [ -f ~/.zsh_ssh_agent ] && source ~/.zsh_ssh_agent
+#store gpg
+[ -f ~/.zsh_gpg_agent ] && source ~/.zsh_gpg_agent
 
 #FZF
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh

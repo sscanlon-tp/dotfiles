@@ -1,0 +1,11 @@
+# Start the gpg-agent if it's not already running
+if ! pgrep -x "gpg-agent" > /dev/null; then
+    eval "$(gpg-agent --daemon)"
+fi
+
+# Preload keys into gpg-agent
+gpg --list-secret-keys --keyid-format LONG | grep sec | awk '{print $2}' | cut -d'/' -f2 | while read key; do
+    echo "Preloading key $key"
+    echo RELOADAGENT | gpg-connect-agent > /dev/null 2>&1
+    gpg --quiet --batch --use-agent --decrypt <<< "test" 2>/dev/null || true
+done
